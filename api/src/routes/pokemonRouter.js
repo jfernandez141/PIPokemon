@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const {getPokemonsHandler} = require("../handlers/pokemonHandler");
+const {getPokemonsHandler,getPokemonHandler,postPokemonHandler} = require("../handlers/pokemonHandler");
 
 const pokemonRouter = Router();
 //estudiar que hace esto ⬆️
@@ -7,6 +7,9 @@ const pokemonRouter = Router();
 //Traemos las rutas y llamamos la funcion correspondiente del hanlder.
 
 pokemonRouter.get("/",getPokemonsHandler);
+pokemonRouter.get("/:id",getPokemonHandler)
+pokemonRouter.post("/",postPokemonHandler)
+
 
 
 
