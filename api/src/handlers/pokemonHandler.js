@@ -2,14 +2,16 @@ const {
   getAllPokemons,
   getPokemon,
   getPokemonByName,
-  postPokemon
+  postPokemon,
 } = require("../controllers/pokemonController");
 
 const getPokemonsHandler = async (req, res) => {
-  const {name}= req.query
+  const { name } = req.query;
   try {
-    const pokemons = name?await getPokemonByName(name) :await getAllPokemons();
-    
+    const pokemons = name
+      ? await getPokemonByName(name)
+      : await getAllPokemons();
+
     res.status(200).json(pokemons);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -20,19 +22,33 @@ const getPokemonHandler = async (req, res) => {
   const { id } = req.params;
   try {
     const pokemon = await getPokemon(id);
+    if(!pokemon) throw new Error (`Pokemon with ${id} ID does not exits`)
     res.status(200).json(pokemon);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-const postPokemonHandler = async(req,res)=>{
+const postPokemonHandler = async (req, res) => {
+  const { nombre, vida, ataque, defensa, velocidad, altura, peso, tipos } =
+    req.body;
+  try {
+    const pokemon = await postPokemon(
+      nombre,
+      vida,
+      ataque,
+      defensa,
+      velocidad,
+      altura,
+      peso,
+      tipos
+    );
+    res.status(200).json(pokemon);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 
+  res.status(200).json();
+};
 
-}
-
-
-
-
-
-module.exports = { getPokemonsHandler, getPokemonHandler,postPokemonHandler };
+module.exports = { getPokemonsHandler, getPokemonHandler, postPokemonHandler };

@@ -5,7 +5,7 @@ const getTypesHandler = async (req,res)=>{
         const types = await saveTypesOnDb()
 
 
-        res.status(200).json(types)
+        res.status(201).json(types)
         
     } catch (error) {
         res.status(400).json({ error: error.message });

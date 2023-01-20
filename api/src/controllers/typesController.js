@@ -15,7 +15,7 @@ const saveTypesOnDb = async () => {
     await Tipo.create({ nombre: type });
   }
 
-  return "Done";
+  return "Saved all pokemon types in the DBB";
 };
 
 module.exports = { getTypes, saveTypesOnDb };
