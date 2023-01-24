@@ -8,7 +8,7 @@ const getTypesHandler = async (req,res)=>{
         res.status(201).json(types)
         
     } catch (error) {
-        res.status(400).json({ error: error.message });
+        res.status(400).json({ error: "The Bdd already contains the types pokemons" });
         
     }
 }

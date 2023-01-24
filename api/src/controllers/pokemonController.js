@@ -1,6 +1,8 @@
 const { Pokemon, Tipo } = require("../db");
 const axios = require("axios");
 
+//NIY VALIDACIONES Y TEASTING
+
 const cleanApiPoke = (obj) => {
   cleanStats = {};
   for (let stat of obj.stats) {
@@ -52,6 +54,7 @@ const cleanBddPoke = (bddPokemons) => {
 };
 
 const getAllPokemons = async (n = 40) => {
+  //Se puede separar funciones
   const apiPokemons = new Array(n).fill("");
 
   const mapApiPokemons = await Promise.all(
@@ -86,7 +89,7 @@ const getPokemon = async (id) => {
     pokemon = (await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)).data;
     pokemon = cleanApiPoke(pokemon);
   } else {
-    pokemon = Pokemon.findByPk(id, {
+    pokemon = await Pokemon.findByPk(id, {
       include: {
         model: Tipo,
         attributes: ["nombre"],
@@ -95,7 +98,7 @@ const getPokemon = async (id) => {
         },
       },
     });
-    pokemon = cleanBddPoke([pokemon]);
+    pokemon = cleanBddPoke([pokemon])[0];
     //No funcona con bdd
   }
   return pokemon;
