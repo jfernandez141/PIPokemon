@@ -1,6 +1,6 @@
 import './App.css';
 import {Route} from "react-router-dom"
-import { Landing,Home } from './views';
+import { About, Detail, Form, Home, Landing } from './views';
 
 
 function App() {
@@ -8,6 +8,9 @@ function App() {
     <div>
     <Route exact path ="/" component={Landing}/>
     <Route path ="/home" component={Home}/>
+    <Route path ="/detail" component={Detail}/>
+    <Route path ="/form" component={Form}/>
+    <Route path ="/about" component={About}/>
     </div>
   );
 }
