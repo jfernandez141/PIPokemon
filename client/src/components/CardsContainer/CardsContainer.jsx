@@ -3,7 +3,10 @@ import style from "./CardsContainer.module.css";
 import { useSelector } from "react-redux";
 
 const CardsContainer = () => {
+  
+  
   let pokemons = useSelector((state) => state.pokemons);
+  
 
   const filterPokemons = useSelector((state) => state.filterPokemons);
 

@@ -6,12 +6,26 @@ export const GET_TYPES = "GET_TYPES";
 export const TYPE_FILTER = "TYPE_FILTER";
 export const ORDER_FILTER = "ORDER_FILTER";
 export const RESET_FILTERPOKE = "RESET_FILTERPOKE";
+export const GET_POKEMONBYNAME = "GET_POKEMONBYNAME";
+export const ERROR ="ERROR"
 
 export const getPokemons = () => {
   return async function (dispatch) {
     const apiPokemons = await axios.get("http://localhost:3001/pokemons");
     const pokemons = apiPokemons.data;
     dispatch({ type: GET_POKEMONS, payload: pokemons });
+  };
+};
+export const getPokemonByName = (name) => {
+  return async function (dispatch) {
+    try {
+      const pokemon = (
+        await axios.get(`http://localhost:3001/pokemons?name=${name}`)
+      ).data;
+      dispatch({ type: GET_POKEMONBYNAME, payload: pokemon });
+    } catch (error) {
+      dispatch({type: ERROR,payload: error.response.data.error})
+    }
   };
 };
 
@@ -47,3 +61,6 @@ export const resetFilterPokemons = () => {
     type: RESET_FILTERPOKE,
   };
 };
+export const resetError = ()=>{
+  return{ type: ERROR, payload: false}
+}

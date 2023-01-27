@@ -5,6 +5,8 @@ import {
   TYPE_FILTER,
   ORDER_FILTER,
   RESET_FILTERPOKE,
+  GET_POKEMONBYNAME,
+  ERROR
 } from "./actions";
 const initialState = {
   pokemons: [],
@@ -27,10 +29,10 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, pokemons: action.payload };
 
     case CREATED_FILTER:
-      if (action.payload == "all") {
+      if (action.payload === "all") {
         filterP = [];
       }
-      if (action.payload == "created") {
+      if (action.payload === "created") {
         filterP = pokemons.filter((p) => {
           return p.created;
         });
@@ -40,7 +42,7 @@ const rootReducer = (state = initialState, action) => {
             error: "0 Pokemons at DBB",
           };
         }
-      } else if (action.payload == "existing") {
+      } else if (action.payload === "existing") {
         filterP = pokemons.filter((p) => {
           return !p.created;
         });
@@ -51,7 +53,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case TYPE_FILTER:
-      if (action.payload == "all") {
+      if (action.payload === "all") {
         filterP = [];
       } else {
         filterP = pokemons.filter((p) => {
@@ -108,7 +110,12 @@ const rootReducer = (state = initialState, action) => {
         filterPokemons: sortPokemon,
       };
 
-    default:
+    case GET_POKEMONBYNAME:
+      return { ...state, filterPokemons: action.payload };
+    case ERROR:
+      return {...state, error: action.payload }
+
+      default:
       return { ...state };
   }
 };

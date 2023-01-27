@@ -7,11 +7,13 @@ import {
 } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import SearchBar from "../SearchBar/SearchBar";
 
 const FiltersNav = () => {
   const dispatch = useDispatch();
   let types = useSelector((state) => state.types);
 
+  //deberia estar en el landing
   useEffect(() => {
     dispatch(getTypes());
   }, [dispatch]);
@@ -90,6 +92,9 @@ const FiltersNav = () => {
             <option value="down">Down</option>
           </optgroup>
         </select>
+      </div>
+      <div>
+      <SearchBar/>
       </div>
     </div>
   );

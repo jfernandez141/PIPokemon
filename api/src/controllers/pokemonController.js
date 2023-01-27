@@ -105,6 +105,7 @@ const getPokemon = async (id) => {
 };
 
 const getPokemonByName = async (name) => {
+  if(!isNaN(name)) throw new Error(`Only accept names`);
   let findedPokemon = [];
 
   try {

@@ -1,13 +1,14 @@
 import {Link} from "react-router-dom"
 import style from "./HNavBar.module.css"
 import { useDispatch } from "react-redux"
-import {resetFilterPokemons} from "../../redux/actions"
+import {resetError, resetFilterPokemons} from "../../redux/actions"
 
 const LandingNavBar =()=>{
     //Cambiar nombre de funcion a Hnav
     const dispatch = useDispatch();
-    const HandlerResetFilterPokemons =()=>{
-        dispatch(resetFilterPokemons())
+    const HandlerResetFilterPokemons =async()=>{
+        await dispatch(resetFilterPokemons())
+        await dispatch(resetError())
     }
     return(
         <div >
