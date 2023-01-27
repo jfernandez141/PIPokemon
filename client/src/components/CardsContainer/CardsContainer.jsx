@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 
 const CardsContainer = () => {
   let pokemons = useSelector((state) => state.pokemons);
+
   const filterPokemons = useSelector((state) => state.filterPokemons);
 
-  if(filterPokemons.length) pokemons = filterPokemons;
-  console.log(pokemons);
+  if (filterPokemons.length) pokemons = filterPokemons;
+  //console.log(pokemons);
 
   return (
     <div className={style.container}>

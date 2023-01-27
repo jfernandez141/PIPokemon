@@ -1,12 +1,19 @@
 import {Link} from "react-router-dom"
 import style from "./HNavBar.module.css"
+import { useDispatch } from "react-redux"
+import {resetFilterPokemons} from "../../redux/actions"
 
 const LandingNavBar =()=>{
+    //Cambiar nombre de funcion a Hnav
+    const dispatch = useDispatch();
+    const HandlerResetFilterPokemons =()=>{
+        dispatch(resetFilterPokemons())
+    }
     return(
         <div >
             <div>
-                <Link to="/home">
-                <button className={style.btn}>Home</button>
+                <Link to="/home" >
+                <button className={style.btn} onClick={()=>HandlerResetFilterPokemons()} >Home</button>
                 </Link>
                 <Link to="/form">
                 <button className={style.btn}>Form</button>

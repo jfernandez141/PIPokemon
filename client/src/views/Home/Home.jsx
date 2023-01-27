@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { getPokemons } from "../../redux/actions.js";
 
 const Home = () => {
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
