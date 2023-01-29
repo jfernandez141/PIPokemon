@@ -8,7 +8,7 @@ function App() {
     <div>
     <Route exact path ="/" component={Landing}/>
     <Route path ="/home" component={Home}/>
-    <Route path ="/detail" component={Detail}/>
+    <Route path ="/detail/:id" component={Detail}/>
     <Route path ="/form" component={Form}/>
     <Route path ="/about" component={About}/>
     </div>

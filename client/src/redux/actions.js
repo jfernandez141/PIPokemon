@@ -8,6 +8,7 @@ export const ORDER_FILTER = "ORDER_FILTER";
 export const RESET_FILTERPOKE = "RESET_FILTERPOKE";
 export const GET_POKEMONBYNAME = "GET_POKEMONBYNAME";
 export const ERROR ="ERROR"
+export const POSTPOKEMON = "POSTPOKEMON"
 
 export const getPokemons = () => {
   return async function (dispatch) {

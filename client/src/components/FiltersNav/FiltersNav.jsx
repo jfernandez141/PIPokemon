@@ -44,11 +44,11 @@ const FiltersNav = () => {
   return (
     <div>
       <div>
-        <label htmlFor="Types" on>Types: </label>
+        <label htmlFor="Types">Types: </label>
         <select
           name="Types"
           defaultValue="all"
-          onChange={(event) => handleType(event)}
+          onChange={handleType}
         >
           <option value="all">All</option>
           {types.map((t, index) => {
@@ -67,7 +67,7 @@ const FiltersNav = () => {
         <select
           name="created"
           defaultValue="all"
-          onChange={(event) => handleCreated(event)}
+          onChange={handleCreated}
         >
           <option value="all">All</option>
           <option value="created">BDD</option>
@@ -80,7 +80,7 @@ const FiltersNav = () => {
         <select
           name="order"
           defaultValue="order"
-          onClick={(event) => handleOrder(event)}
+          onClick={handleOrder}
         >
           <option value="default">-Order-</option>
           <optgroup label="Alphabetic">

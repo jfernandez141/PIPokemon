@@ -19,6 +19,8 @@ const CardsContainer = () => {
         return (
           <div key={index}>
             <Card
+              id={pokemon.id}
+              image={pokemon.image}
               name={pokemon.name}
               types={pokemon.types.join(", ")}
               attack={pokemon.stats["attack"]}
