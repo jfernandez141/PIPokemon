@@ -28,13 +28,15 @@ const cleanApiPoke = (obj) => {
 
 const cleanBddPoke = (bddPokemons) => {
   const cleanBddPokemons = [];
+  
 
   for (let pokemon of bddPokemons) {
+    const random = Math.floor(Math.random()* 1008 + 1)
     let newPokemon = {
       id: pokemon.id,
       name: pokemon.nombre,
       image:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
+        `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${random}.png`,
       types: pokemon.Tipos.map((t) => t.nombre),
       heigh: pokemon.altura,
       weight: pokemon.peso,
@@ -105,7 +107,7 @@ const getPokemon = async (id) => {
 };
 
 const getPokemonByName = async (name) => {
-  if(!isNaN(name)) throw new Error(`Only accept names`);
+  if (!isNaN(name)) throw new Error(`Only accept names`);
   let findedPokemon = [];
 
   try {
@@ -139,33 +141,6 @@ const getPokemonByName = async (name) => {
   }
 
   return findedPokemon.flat(1);
-
-  // try {
-
-  //   //apiPokemon = cleanApiPoke(apiPokemon);
-
-  //   // let bddPokemon = await Pokemon.findOne({
-  //   //   where: {
-  //   //     nombre: name,
-  //   //   },
-  //   //   include: {
-  //   //     model: Tipo,
-  //   //     attributes: ["nombre"],
-  //   //     through: {
-  //   //       attributes: [],
-  //   //     },
-  //   //   },
-  //   // });
-  //   // bddPokemon = cleanBddPoke([bddPokemon]);
-  //   // console.log(bddPokemon)
-
-  //   // return bddPokemon[0];
-  //   return 1;
-  // } catch (error) {
-  //
-  // }
-
-  //NIY BUSCAR EN LA BDD EL POKEMON
 };
 
 const postPokemon = async (

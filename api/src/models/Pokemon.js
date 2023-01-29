@@ -12,6 +12,9 @@ module.exports = (sequelize) => {
       nombre: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate:{
+          is: /^[a-zA-Z]+$/
+        }
       },
       vida: {
         type: DataTypes.STRING,
