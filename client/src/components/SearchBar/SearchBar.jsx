@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import styles from "./SearchBar.module.css";
+import style from "./SearchBar.module.css";
 import { getPokemonByName } from "../../redux/actions";
 
 export default function SearchBar() {
@@ -25,15 +25,15 @@ export default function SearchBar() {
   }
 
   return (
-    <div>
-      <input
+    <div className={style.searchBar}>
+      <input className={style.input}
         type="search"
         placeholder="Search Pokemon"
         value={searchBar}
         onChange={searchChange}
         onKeyDown={enter}
       />
-      <button onClick={click}>Search</button>
+      <button className={style.btn} onClick={click}>Search</button>
     </div>
   );
 }

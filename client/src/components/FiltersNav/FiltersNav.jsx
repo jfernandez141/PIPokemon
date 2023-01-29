@@ -8,6 +8,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import SearchBar from "../SearchBar/SearchBar";
+import style from "./FiltersNav.module.css";
 
 const FiltersNav = () => {
   const dispatch = useDispatch();
@@ -42,10 +43,13 @@ const FiltersNav = () => {
   };
 
   return (
-    <div>
+    <div className={style.navdib}>
       <div>
-        <label htmlFor="Types">Types: </label>
+        <label className={style.label} htmlFor="Types">
+          Types:{" "}
+        </label>
         <select
+          className={style.selects}
           name="Types"
           defaultValue="all"
           onChange={handleType}
@@ -63,8 +67,11 @@ const FiltersNav = () => {
       </div>
 
       <div>
-        <label htmlFor="created">Created: </label>
+        <label className={style.label} htmlFor="created">
+          Created:{" "}
+        </label>
         <select
+          className={style.selects}
           name="created"
           defaultValue="all"
           onChange={handleCreated}
@@ -76,13 +83,16 @@ const FiltersNav = () => {
       </div>
 
       <div>
-        <label htmlFor="order"></label>
+        <label className={style.label} htmlFor="order">
+          Order:{" "}
+        </label>
         <select
+          className={style.selects}
           name="order"
           defaultValue="order"
           onClick={handleOrder}
         >
-          <option value="default">-Order-</option>
+          <option value="default">-Default-</option>
           <optgroup label="Alphabetic">
             <option value="az">A to Z</option>
             <option value="za">Z to A</option>
@@ -94,7 +104,7 @@ const FiltersNav = () => {
         </select>
       </div>
       <div>
-      <SearchBar/>
+        <SearchBar />
       </div>
     </div>
   );

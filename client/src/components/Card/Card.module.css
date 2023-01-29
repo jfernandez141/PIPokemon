@@ -1,9 +1,16 @@
-.card{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 50px;
-    background-color: rgba(175, 181, 154, 0.803);
-    width: fit-content;
-    max-width: 350px;
-    margin-bottom: 20px;
+.card {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50px;
+  background-color: rgba(175, 181, 154, 0.803);
+  width: fit-content;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+.img {
+  width: 200px;
+  border-radius: 100px;
+  margin: auto;
+  padding-left: 30px;
+  padding-right: 30px;
 }

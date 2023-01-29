@@ -9,14 +9,12 @@ import { getPokemons } from "../../redux/actions.js";
 const Home = () => {
   let error = useSelector((state) => state.error);
   
-  const dispatch = useDispatch();
+  let pokemons = useSelector((state) => state.pokemons);  
+  const dispatch = useDispatch();  
+  if(!pokemons.length) dispatch(getPokemons());  
+
   
-  useEffect(() => {
-    dispatch(getPokemons());    
-  }, [dispatch]);
-  
-  if(error) {  
-    
+  if(error) {      
     return(
       <div>
         <HnavBar/>
