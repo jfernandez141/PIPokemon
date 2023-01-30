@@ -1,15 +1,18 @@
 .hnav {
   width: 90%;
   margin: 0 auto;
-  background-color: rgb(161, 23, 23);
+  background-color: rgb(21, 193, 93);
   display: flex;
   justify-content: center;
   border-radius: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  
+  
 }
-.btn{
-    font-size:  18px;
-    border-radius: 5px;
-    background-color: rgb(255, 238, 0);
-    margin-left: 50px;
-    
+.btn {
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: rgba(255, 238, 0, 0.818);
+  margin-left: 50px;
 }

@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@0;1&display=swap");
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.landingBody {
+  background-image: url("../../imgs/pokemon-wallpapers-22.jpg");
+  display: flex;
+  justify-content: center;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.btn {
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: rgb(28, 115, 144);
+  margin-left: 25px;
+}
+.title {
+  background-color: rgba(175, 181, 154, 0.803);
+  border-radius: 20px;
+  margin-top: 50px;
+  
+
+  height: fit-content;
+}

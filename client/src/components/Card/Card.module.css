@@ -1,11 +1,13 @@
 .card {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  
+  padding: 10px;
   border-radius: 50px;
-  background-color: rgba(175, 181, 154, 0.803);
+  background-color: rgba(255, 255, 255, 0.594);
   width: fit-content;
   max-width: 250px;
   margin-bottom: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .img {
   width: 200px;

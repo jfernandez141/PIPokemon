@@ -57,19 +57,19 @@ const CardsContainer = () => {
   }
 
   return (
-    <div>
-      <div>
-        <button onClick={prevHandler}>Back Page</button>
+    <div >
+      <div className={style.page}>
+        <button onClick={prevHandler} className={style.btn}>Back Page</button>
         <div>
           {pageNumbers.map((n)=>{
           return(
-            <button key={n} onClick={pageHanlder} value={n} >
+            <button key={n} onClick={pageHanlder} value={n} className={style.btn}>
               {n}
             </button>
           )
         })}
         </div>
-        <button onClick={nextHandler}>Next Page</button>
+        <button onClick={nextHandler} className={style.btn}>Next Page</button>
       </div>
       <div className={style.container}>
         {items.map((pokemon, index) => {

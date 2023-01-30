@@ -1,0 +1,40 @@
+.detailBody {
+  background-color: #2886dd;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  
+}
+.detailPokemon {
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.594);
+  width: fit-content;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+.detailImg {
+  width: 300px;
+  border-radius: 100px;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pokemon{
+    display: flex;
+    flex-direction: row;
+    
+
+}
+.text{
+    font: optional;
+    font-size: 30px;
+    padding-left: 540px;
+    color: rgb(25, 226, 109);
+}

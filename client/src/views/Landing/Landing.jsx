@@ -10,10 +10,21 @@ const Landing = () => {
 
   return (
     <div className={style.landingBody}>
-      <h1 className={style.tittle}>Estamos en el Landing</h1>
+      
+      <div className={style.title}>
+      <h1 className={style.tittle}>WELCOME TO POKEMON</h1>
+      <h3>This app was created by Jhamil Fernandez</h3>
       <Link to="/home">
         <button className={style.btn}>Home</button>
       </Link>
+      <a href="https://www.linkedin.com/in/jhamil-fernandez/">
+      <button className={style.btn} >Linkedin</button>
+      </a>
+      <a href="https://github.com/jfernandez141">
+      <button className={style.btn} >GitHub</button>
+      </a>
+      </div>
+
     </div>
   );
 };

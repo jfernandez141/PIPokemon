@@ -1,0 +1,14 @@
+.errorBody {
+  background-image: url("https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/pokemon/grookey.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 120%;
+  position: absolute;
+}
+.error{
+    margin-top: 50px;
+    margin-left: 25px;
+    
+}

@@ -1,19 +1,24 @@
 .navdib {
   padding-top: 10px;
+  padding-left: 10px;
   width: 90%;
   margin: 0 auto;
-  background-color: rgb(161, 23, 23);
+  background-color: rgb(21, 193, 93);
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
+
 }
 
 .selects {
-  background-color: rgb(255, 238, 0);
+  background-color: rgba(255, 238, 0, 0.818);
   padding: 8px;
   border-radius: 20px;
+  margin-bottom: 5px;
+  
 }
-.label{
-    font-size: 20px;
-    padding-right: 4px;
+.label {
+  color: white;
+  font-size: 20px;
+  padding-right: 4px;
 }
