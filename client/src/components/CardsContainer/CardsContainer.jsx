@@ -27,6 +27,7 @@ const CardsContainer = () => {
     setItems([...pokemons].splice(0, ITEMS_PER_PAGE));
     setCurrentPage(0);
   }, [pokemons]);
+  
 
   const nextHandler = () => {
     const totalElements = pokemons.length;
@@ -49,10 +50,10 @@ const CardsContainer = () => {
 
   const pageHanlder = (event)=>{
     const page = event.target.value
-    const firstIndex = (page - 1) * ITEMS_PER_PAGE
+    const firstIndex = (page) * ITEMS_PER_PAGE
 
     setItems([...pokemons].splice(firstIndex, ITEMS_PER_PAGE));
-    setCurrentPage(page);
+    setCurrentPage(page );
 
   }
 
@@ -62,8 +63,9 @@ const CardsContainer = () => {
         <button onClick={prevHandler} className={style.btn}>Back Page</button>
         <div>
           {pageNumbers.map((n)=>{
+            
           return(
-            <button key={n} onClick={pageHanlder} value={n} className={style.btn}>
+            <button key={n} onClick={pageHanlder} value={n - 1} className={(n-1)== currentPage?style.btn2:style.btn}>
               {n}
             </button>
           )

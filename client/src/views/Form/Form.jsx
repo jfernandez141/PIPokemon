@@ -3,8 +3,16 @@ import { useState } from "react";
 import { validate } from "./validation";
 import HnavBar from "../../components/HNavBar/HNavBar";
 import style from "./Form.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getPokemons } from "../../redux/actions";
 
 const Form = () => {
+  let pokemons = useSelector((state) => state.pokemons);
+  const dispatch = useDispatch();
+  if (!pokemons.length) dispatch(getPokemons());
+  //useEffect
+
+
   const types = [
     "normal",
     "fighting",
@@ -54,11 +62,9 @@ const Form = () => {
 
     if (property == "nombre") {
       const err = validate(value);
-      console.log(err);
       setError({
         nombre: validate(value),
       });
-      console.log(err);
     }
   }
 
@@ -99,12 +105,12 @@ const Form = () => {
       <HnavBar></HnavBar>
 
       <div>
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit}>
           <div className={style.form}>
             <div className={style.data}>
               <label htmlFor="">Name: </label>
               <input
-              className={style.input}
+                className={style.input}
                 required
                 type="text"
                 name="nombre"
@@ -211,7 +217,7 @@ const Form = () => {
                 );
               })}
               <p>*3 Types Max</p>
-          <button type="submit">CREATE POKEMON </button>
+              <button type="submit">CREATE POKEMON </button>
             </div>
           </div>
         </form>

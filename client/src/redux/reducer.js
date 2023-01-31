@@ -6,7 +6,8 @@ import {
   ORDER_FILTER,
   RESET_FILTERPOKE,
   GET_POKEMONBYNAME,
-  ERROR
+  ERROR,
+  DELETE_POKEMON,
 } from "./actions";
 const initialState = {
   pokemons: [],
@@ -62,7 +63,7 @@ const rootReducer = (state = initialState, action) => {
         if (!filterP.length) {
           return {
             ...state,
-            error: `dont hace any pokemon with the type ${action.payload}`,
+            error: `There is no pokemon with the type: ${action.payload}`,
           };
         }
       }
@@ -113,9 +114,20 @@ const rootReducer = (state = initialState, action) => {
     case GET_POKEMONBYNAME:
       return { ...state, filterPokemons: action.payload };
     case ERROR:
-      return {...state, error: action.payload }
+      return { ...state, error: action.payload };
 
-      default:
+    case DELETE_POKEMON:
+      return {
+        ...state,
+        pokemons: state.pokemons.filter((p) => {
+          return p.id !== action.payload;
+        }),
+        filterPokemons: state.filterPokemons.filter((p) => {
+          return p.id !== action.payload;
+        }),
+      };
+
+    default:
       return { ...state };
   }
 };

@@ -22,10 +22,7 @@ const FiltersNav = () => {
   const handleCreated = (event) => {
     event.preventDefault();
     const value = event.target.value;
-    // if (value == "all") {
-    //   dispatch(getPokemons());
-    // }
-    //CREO QUE NO SE REQUIERE
+
     if (value) {
       dispatch(createdFilter(value));
     }

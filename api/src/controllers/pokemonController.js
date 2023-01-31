@@ -167,4 +167,11 @@ const postPokemon = async (
   return { pokemon, tipos };
 };
 
-module.exports = { getAllPokemons, getPokemon, getPokemonByName, postPokemon };
+const deletePokemon = async (id)=>{
+  const pokemon = await Pokemon.destroy({
+    where: {id: id}
+  })
+  
+}
+
+module.exports = { getAllPokemons, getPokemon, getPokemonByName, postPokemon,deletePokemon };

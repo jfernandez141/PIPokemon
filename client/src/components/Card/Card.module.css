@@ -1,13 +1,17 @@
 .card {
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.594);
   width: fit-content;
+  height: fit-content;
   max-width: 250px;
   margin-bottom: 20px;
   margin-right: 10px;
   margin-left: 10px;
+  align-items: center;
 }
 .img {
   width: 200px;
@@ -15,4 +19,12 @@
   margin: auto;
   padding-left: 30px;
   padding-right: 30px;
+}
+.btnDelete {
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: transparent;
+}
+.btnDelete:hover {
+  background: rgb(242, 5, 88);
 }

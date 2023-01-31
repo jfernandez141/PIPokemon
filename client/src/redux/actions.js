@@ -7,8 +7,8 @@ export const TYPE_FILTER = "TYPE_FILTER";
 export const ORDER_FILTER = "ORDER_FILTER";
 export const RESET_FILTERPOKE = "RESET_FILTERPOKE";
 export const GET_POKEMONBYNAME = "GET_POKEMONBYNAME";
-export const ERROR ="ERROR"
-export const POSTPOKEMON = "POSTPOKEMON"
+export const ERROR = "ERROR";
+export const DELETE_POKEMON = "DELETE_POKEMON";
 
 export const getPokemons = () => {
   return async function (dispatch) {
@@ -25,7 +25,7 @@ export const getPokemonByName = (name) => {
       ).data;
       dispatch({ type: GET_POKEMONBYNAME, payload: pokemon });
     } catch (error) {
-      dispatch({type: ERROR,payload: error.response.data.error})
+      dispatch({ type: ERROR, payload: error.response.data.error });
     }
   };
 };
@@ -56,12 +56,19 @@ export const orderFilter = (payload) => {
     payload,
   };
 };
+export const deletePokemon = (payload) => {
+  return async function (dispatch) {
+    await axios.delete(`http://localhost:3001/pokemons/${payload}`);
+    dispatch({ type: DELETE_POKEMON, payload });
+  };
+};
 
 export const resetFilterPokemons = () => {
   return {
     type: RESET_FILTERPOKE,
   };
 };
-export const resetError = ()=>{
-  return{ type: ERROR, payload: false}
-}
+export const resetError = () => {
+  return { type: ERROR, payload: false };
+};
+

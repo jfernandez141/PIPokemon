@@ -22,3 +22,12 @@
     margin-left: 50px;
 
 }
+.btn:hover{
+    background-color: rgb(154, 205, 24);
+}
+.btn2{
+    font-size:  15px;
+    border-radius: 5px;
+    background-color: rgba(17, 202, 131, 0.818);
+    margin-left: 50px;
+}
