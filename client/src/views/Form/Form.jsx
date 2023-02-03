@@ -10,8 +10,7 @@ const Form = () => {
   let pokemons = useSelector((state) => state.pokemons);
   const dispatch = useDispatch();
   if (!pokemons.length) dispatch(getPokemons());
-  //useEffect
-
+  
 
   const types = [
     "normal",
@@ -38,12 +37,12 @@ const Form = () => {
 
   const [pokemon, setPokemon] = useState({
     nombre: "",
-    vida: "50",
-    ataque: "50",
-    defensa: "50",
-    velocidad: "50",
-    altura: "50",
-    peso: "50",
+    vida: "1",
+    ataque: "1",
+    defensa: "1",
+    velocidad: "1",
+    altura: "1",
+    peso: "1",
     tipos: [],
   });
 
@@ -90,8 +89,8 @@ const Form = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if (error.nombre.length) return alert("complit with the correct data");
-    if (!pokemon.tipos.length) return alert("chosse aleast one Type");
+    if (error.nombre.length) return alert("Complit with the correct data");
+    if (!pokemon.tipos.length) return alert("Select at least one type");
     await axios
       .post("http://localhost:3001/pokemons", pokemon)
       .then(alert("Pokemon Created"))
@@ -118,11 +117,12 @@ const Form = () => {
                 placeholder="Pokemon's Name"
                 onChange={handleInputChange}
               />
-              <p>{error.nombre}</p>
+              <p className={style.errorName}>{error.nombre}</p>
 
               <div>
                 <label htmlFor="">Hp: </label>
                 <input
+                  value={pokemon.vida}
                   type="range"
                   min="1"
                   max="120"
@@ -136,6 +136,7 @@ const Form = () => {
               <div>
                 <label htmlFor="">Attack: </label>
                 <input
+                  value={pokemon.ataque}
                   type="range"
                   min="1"
                   max="120"
@@ -149,6 +150,7 @@ const Form = () => {
               <div>
                 <label htmlFor="">Defense: </label>
                 <input
+                  value={pokemon.defensa}
                   type="range"
                   min="1"
                   max="120"
@@ -162,6 +164,7 @@ const Form = () => {
               <div>
                 <label htmlFor="">Speed: </label>
                 <input
+                  value={pokemon.velocidad}
                   type="range"
                   min="1"
                   max="120"
@@ -174,6 +177,7 @@ const Form = () => {
               <div>
                 <label htmlFor="">Heigh: </label>
                 <input
+                  value={pokemon.altura}
                   type="range"
                   min="1"
                   max="200"
@@ -187,6 +191,7 @@ const Form = () => {
               <div>
                 <label htmlFor="">Weigth: </label>
                 <input
+                  value={pokemon.peso}
                   type="range"
                   min="1"
                   max="200"

@@ -6,7 +6,7 @@ export default function Error() {
   return (
     <div className={style.errorBody}>
       <HnavBar />
-      <h1 className={style.error}>So Sorry {error}</h1>
+      <h1 className={style.error}>So Sorry, {error}</h1>
       <h1 className={style.error}>Please Return to Home</h1>
     </div>
   );

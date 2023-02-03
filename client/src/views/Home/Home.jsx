@@ -24,8 +24,8 @@ const Home = () => {
   return (
     <div className={style.homeBody}>
       <div >
-        <HnavBar></HnavBar>
-        <FiltersNav></FiltersNav>
+        <HnavBar/>
+        <FiltersNav/>
       </div>
 
       <CardsContainer />

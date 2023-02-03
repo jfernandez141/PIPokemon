@@ -44,7 +44,7 @@ const postPokemonHandler = async (req, res) => {
       peso,
       tipos
     );
-    res.status(200).json(pokemon);
+    res.status(201).json(pokemon);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

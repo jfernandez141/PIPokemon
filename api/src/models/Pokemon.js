@@ -12,27 +12,33 @@ module.exports = (sequelize) => {
       nombre: {
         type: DataTypes.STRING,
         allowNull: false,
-        validate:{
-          is: /^[a-zA-Z]+$/
-        }
+        validate: {
+          is: /^[a-zA-Z]+$/,
+        },
       },
       vida: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       ataque: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       defensa: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       velocidad: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       altura: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       peso: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       created: {
         type: DataTypes.BOOLEAN,

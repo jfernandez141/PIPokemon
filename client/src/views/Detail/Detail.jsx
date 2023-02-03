@@ -17,33 +17,49 @@ const Detail = () => {
   });
 
   // const pokemon = await axios.get(`http://localhost:3001/pokemons/${id}`)).data
-  useEffect(async () => {
-    const poke = (await axios.get(`http://localhost:3001/pokemons/${id}`)).data;
-    setPokemon({
-      id: poke.id,
-      image: poke.image,
-      name: poke.name,
-      types: poke.types,
-      hp: poke.stats.hp,
-      attack: poke.stats.attack,
-      defense: poke.stats.defense,
-      speed: poke.stats.speed,
-      created: poke.created,
-    });
-  }, [id]);
+  // useEffect(async () => {
+  //   const poke = (await axios.get(`http://localhost:3001/pokemons/${id}`)).data;
+  //   setPokemon({
+  //     id: poke.id,
+  //     image: poke.image,
+  //     name: poke.name,
+  //     types: poke.types,
+  //     hp: poke.stats.hp,
+  //     attack: poke.stats.attack,
+  //     defense: poke.stats.defense,
+  //     speed: poke.stats.speed,
+  //     created: poke.created,
+  //   });
+  // }, [id]);
+
+  useEffect(()=>{
+    axios.get(`http://localhost:3001/pokemons/${id}`)
+    .then((res)=>{
+      const poke = res.data
+      setPokemon({
+            id: poke.id,
+            image: poke.image,
+            name: poke.name,
+            types: poke.types,
+            hp: poke.stats.hp,
+            attack: poke.stats.attack,
+            defense: poke.stats.defense,
+            speed: poke.stats.speed,
+            created: poke.created,
+          });
+    })
+    .catch((error)=>alert(error.message))
+
+  },[id])
 
   return (
     <div className={style.detailBody}>
       <HnavBar />
       <div className={style.pokemon}>
-        <img
-          src={pokemon.image}
-          className={style.detailImg}
-          alt={pokemon.name}
-        />
+        
         <div className={style.detailPokemon}>
+          <h1>Name: {pokemon.name}</h1>
           <h2>ID: {pokemon.id}</h2>
-          <h2>Name: {pokemon.name}</h2>
           <h2>Types: {pokemon.types.join(", ")}</h2>
           <div>
             <h2>Hp: {pokemon.hp}</h2>
@@ -53,6 +69,11 @@ const Detail = () => {
           </div>
           <h2>Created: {pokemon.created ? "Yes" : "No"}</h2>
         </div>
+        <img
+          src={pokemon.image}
+          className={style.detailImg}
+          alt={pokemon.name}
+        />
       </div>
       <h3 className={style.text}>POKEMON DETAILS</h3>
     </div>

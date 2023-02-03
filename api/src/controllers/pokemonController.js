@@ -56,7 +56,7 @@ const cleanBddPoke = (bddPokemons) => {
 };
 
 const getAllPokemons = async (n = 40) => {
-  //Se puede separar funciones
+  
   const apiPokemons = new Array(n).fill("");
 
   const mapApiPokemons = await Promise.all(
@@ -101,7 +101,7 @@ const getPokemon = async (id) => {
       },
     });
     pokemon = cleanBddPoke([pokemon])[0];
-    //No funcona con bdd
+    
   }
   return pokemon;
 };
