@@ -21,3 +21,13 @@
     border-radius: 10px;
     margin-left: 170px;
 }
+.btn {
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: rgb(28, 115, 144);
+  margin-left: 25px;
+}
+.divBtn{
+  padding-top: 10px;
+  padding-left: 190px;
+}
