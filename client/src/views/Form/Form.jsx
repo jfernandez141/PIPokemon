@@ -92,7 +92,7 @@ const Form = () => {
     if (error.nombre.length) return alert("Complit with the correct data");
     if (!pokemon.tipos.length) return alert("Select at least one type");
     await axios
-      .post("http://localhost:3001/pokemons", pokemon)
+      .post("/pokemons", pokemon)
       .then(alert("Pokemon Created"))
       .catch((err) => alert(err));
 

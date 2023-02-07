@@ -17,40 +17,40 @@ const Detail = () => {
   });
 
   // const pokemon = await axios.get(`http://localhost:3001/pokemons/${id}`)).data
-  // useEffect(async () => {
-  //   const poke = (await axios.get(`http://localhost:3001/pokemons/${id}`)).data;
-  //   setPokemon({
-  //     id: poke.id,
-  //     image: poke.image,
-  //     name: poke.name,
-  //     types: poke.types,
-  //     hp: poke.stats.hp,
-  //     attack: poke.stats.attack,
-  //     defense: poke.stats.defense,
-  //     speed: poke.stats.speed,
-  //     created: poke.created,
-  //   });
-  // }, [id]);
+  useEffect(async () => {
+    const poke = (await axios.get(`/pokemons/${id}`)).data;
+    setPokemon({
+      id: poke.id,
+      image: poke.image,
+      name: poke.name,
+      types: poke.types,
+      hp: poke.stats.hp,
+      attack: poke.stats.attack,
+      defense: poke.stats.defense,
+      speed: poke.stats.speed,
+      created: poke.created,
+    });
+  }, [id]);
 
-  useEffect(()=>{
-    axios.get(`http://localhost:3001/pokemons/${id}`)
-    .then((res)=>{
-      const poke = res.data
-      setPokemon({
-            id: poke.id,
-            image: poke.image,
-            name: poke.name,
-            types: poke.types,
-            hp: poke.stats.hp,
-            attack: poke.stats.attack,
-            defense: poke.stats.defense,
-            speed: poke.stats.speed,
-            created: poke.created,
-          });
-    })
-    .catch((error)=>alert(error.message))
+  // useEffect(()=>{
+  //   axios.get(`http://localhost:3001/pokemons/${id}`)
+  //   .then((res)=>{
+  //     const poke = res.data
+  //     setPokemon({
+  //           id: poke.id,
+  //           image: poke.image,
+  //           name: poke.name,
+  //           types: poke.types,
+  //           hp: poke.stats.hp,
+  //           attack: poke.stats.attack,
+  //           defense: poke.stats.defense,
+  //           speed: poke.stats.speed,
+  //           created: poke.created,
+  //         });
+  //   })
+  //   .catch((error)=>alert(error.message))
 
-  },[id])
+  // },[id])
 
   return (
     <div className={style.detailBody}>
