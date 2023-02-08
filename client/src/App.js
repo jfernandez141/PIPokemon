@@ -2,7 +2,7 @@ import './App.css';
 import {Route} from "react-router-dom"
 import { About, Detail, Form, Home, Landing } from './views';
 import axios from 'axios';
-axios.defaults.baseURL ="http://localhost:3001/"
+axios.defaults.baseURL ="pipokemon-production-f27a.up.railway.app/"
 
 
 function App() {
